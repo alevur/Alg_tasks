@@ -12,3 +12,19 @@
 <tr><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
 <tr><td>Z</td><td>Z</td><td>Z</td><td>Z</td><td>Z</td><td>Z</td></tr>
 </table>
+<script type="text/javascript">
+    $(function() {
+        //прячет/таймер показа/
+        $('table').hide().delay(1000).fadeIn(400);
+        //делает вторую строку красной
+        $('tr:eq(1)').css('background', 'red');
+        //двойной клик добавляет '+' в ячейку
+        $('td').on('click', function(){
+            $(this).append('+');
+        })
+        //двойной клик создает дубликат строки в конце таблицы
+        $('tr').dblclick(function () {
+            $(this).clone().appendTo('table');
+        })
+    });
+</script>
